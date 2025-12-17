@@ -1,0 +1,8 @@
+name: CI
+on: push
+jo
+  prod-check:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying to production server on branch $GITHUB_REF"
