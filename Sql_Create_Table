@@ -1,0 +1,18 @@
+import mysql.connector
+
+#myconn = mysql.connector.connect(host='localhost', user='root', password='sumit7397', database="student")
+
+cur = myconn.cursor()  # To build a Connection with MySQL
+
+query = "CREATE TABLE student(Stu_id int primary key, Stu_name varchar(200), joining_date DATE, Address varchar(200))"
+
+cur.execute(query)
+
+query2 = "DESC student"
+
+cur.execute(query2)
+
+for x in cur:
+    print(x)
+
+myconn.close()
